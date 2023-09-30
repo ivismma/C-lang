@@ -28,7 +28,7 @@ t˜ao grande quanto a altura m´inima necess´aria.
 
 int main(){
 	
-	int qtd,altura,i, cont=0; // qtd = Quantidade de brinquedos | altura = Altura de Carlitos | cont = Quantiadde de brinquedos que Carlitos pode usufruir.
+	int qtd,altura,i, cont=0; // qtd = Quantidade de brinquedos | altura = Altura de Carlitos | cont = Quantidade de brinquedos que Carlitos pode usufruir.
 	
 	// Entrada
     printf("Digite a primeira e segunda linha:\n");
@@ -43,7 +43,7 @@ int main(){
 	for(i=0;i < qtd;i++) // Entrada de alturas mínimas dos brinquedos (em uma única linha, separada por espaços).
 		scanf("%d", &brinquedo[i]); 
 	for(i=0;i < qtd;i++) // Checagem de altura de Carlitos em comparação com a altura mínima dos brinquedos do parque.
-		cont += (altura >= brinquedo[i])? 1:0;
+		cont += (altura >= brinquedo[i]); // Expressão lógica.
 	// Saída
 	printf("%d", cont);
     
