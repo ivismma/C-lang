@@ -21,17 +21,21 @@ Na segunda linha da entrada, ser˜ao fornecidas as alturas m´inimas A1, . . . ,
 cada um dos brinquedos do parque.
 Sa´ida
 Seu programa deve imprimir uma ´unica linha contendo a quantidade de brinquedos nos quais
-Carlitos pode ir, ou seja, a quantidade de brinquedos para os quais a altura de Carlitos ´e pelo menos
-t˜ao grande quanto a altura m´inima necess´aria.
+Carlitos pode ir, ou seja, a quantidade de brinquedos para os quais a altura de Carlitos é pelo menos
+tão grande quanto a altura m´inima necessária.
 
 */
+
+// Exemplo de entrada:
+// 5 150
+// 120 170 120 100 160
+// Saída: 3 (Carlinhos pode usufruir de 3 brinquedos com base em sua altura e a altura mínima dos brinquedos.
 
 int main(){
 	
 	int qtd,altura,i, cont=0; // qtd = Quantidade de brinquedos | altura = Altura de Carlitos | cont = Quantidade de brinquedos que Carlitos pode usufruir.
 	
 	// Entrada
-    printf("Digite a primeira e segunda linha:\n");
     scanf("%d %d", &qtd, &altura);
     // DEFESA
 	if( (qtd < 1 || qtd > 6) || (altura < 90 || altura > 200) ){ 
@@ -40,9 +44,9 @@ int main(){
 	}
 	// Solução
 	int brinquedo[qtd]; // Criação de vetor de tamanho quantidade de brinquedos.
-	for(i=0;i < qtd;i++) // Entrada de alturas mínimas dos brinquedos (em uma única linha, separada por espaços).
+	for(i=0;i < qtd;++i) // Entrada de alturas mínimas dos brinquedos (em uma única linha, separada por espaços).
 		scanf("%d", &brinquedo[i]); 
-	for(i=0;i < qtd;i++) // Checagem de altura de Carlitos em comparação com a altura mínima dos brinquedos do parque.
+	for(i=0;i < qtd;++i) // Checagem de altura de Carlitos em comparação com a altura mínima dos brinquedos do parque.
 		cont += (altura >= brinquedo[i]); // Expressão lógica.
 	// Saída
 	printf("%d", cont);
