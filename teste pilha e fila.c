@@ -1,12 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define Fila Pilha // Mesma estrutura.
+#define Pilha Lista 
+#define Fila Lista
+					// Impl. usando mesma estrutura (Fila s/ ponteiro para fim).
 
 typedef struct node{
 	int valor;
 	struct node *prox;
-} Pilha;
+} Lista;
 
 Pilha *empilhar(Pilha *topo, int valor);  // pop()
 Pilha *desempilhar(Pilha *topo);          // push()
@@ -14,7 +16,7 @@ Pilha *desempilhar(Pilha *topo);          // push()
 Fila *enfileirar(Fila *topo, int valor);
 Fila *liberar(Fila *topo);
 
-void exibirLista(Pilha *topo); // ExibiÁ„o Lista encadeada
+void exibirLista(Pilha *topo); // Exibi√ß√£o Lista encadeada
 
 int main(void){
 	
@@ -69,12 +71,12 @@ Fila *enfileirar(Fila *topo, int valor){
 	else{
 	Fila *atual = topo;
 
-	// Sem ponteiro para o final da fila (Percorre atÈ fim da fila).
+	// Sem ponteiro para o final da fila (Percorre at√© fim da fila).
 	
 	while(atual->prox != NULL) atual = atual->prox;
 	atual->prox = novo; // Adiciona no fim da fila.
 	
-	return topo; // Fila sempre retornar· topo.
+	return topo; // Fila sempre retornar√° topo.
 	}
 }
 
