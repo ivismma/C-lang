@@ -13,6 +13,7 @@ int main(void){
 		
 	fprintf(arq, "123456789\n");
 	fprintf(arq, "--> Segunda linha no arquivo");
+	fclose(arq);
 	fprintf(arq2, "123456789\n");
 	fprintf(arq2, "--> Segunda linha no arquivo");
 	
@@ -29,7 +30,6 @@ int main(void){
 	fseek(arq2, 0, SEEK_END);
 	fprintf(arq2, "..."); // Adicionar reticências no fim da seg. linha.
 	
-	fclose(arq);
 	fclose(arq2);
 	printf("Escrita realizada (antes.txt, depois.txt).");
 	return 0;
