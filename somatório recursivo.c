@@ -1,11 +1,11 @@
 #include <stdio.h>
 
-// Funções Recursivas - Aula 5.
+// FunÃ§Ãµes Recursivas - Aula 5.
 
-// O Somatório: i = 1 até n de ( i³ / (i + 1) )
-float somatorioRecursivo(int n, int i, float soma);
+// O SomatÃ³rio: i = 1 atÃ© n de ( iÂ³ / (i + 1) )
+float somatorioRecursivo(int i, int n, float soma);
 
-// Ex de Entrada e Saída:  7 --> 117.28
+// Ex de Entrada e SaÃ­da:  7 --> 117.28
 
 int main(void){
 	int n;
