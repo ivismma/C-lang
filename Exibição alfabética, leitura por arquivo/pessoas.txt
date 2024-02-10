@@ -1,0 +1,23 @@
+Obs: Inserir nomes de ate 30 caracteres.
+{
+Roberto
+Ana Clara
+Pedro
+Vitor
+Pedro
+Junior
+Alexandre
+Tadeu
+Carlos
+Gabriel
+William
+Joel
+Mike
+Rafael
+Geraldo
+Guilherme
+Marcos
+Nicolas
+Maycon
+Carlitos
+}
