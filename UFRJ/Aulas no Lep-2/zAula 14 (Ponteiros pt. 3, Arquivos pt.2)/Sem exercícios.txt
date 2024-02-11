@@ -1,7 +1,0 @@
-Fim da matéria do curso.
-
-Requisitos cumpridos para puxar:
-- ICP116 - Estruturas de Dados
-- ICP239 - POO
-- ICP237 - Modelagem de Sistemas
-- ICP246 - Arquitet Comput e Sist Operac
