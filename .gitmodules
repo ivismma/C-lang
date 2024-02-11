@@ -1,0 +1,6 @@
+[submodule "Listas_Encadeadas_em_C"]
+	path = Listas_Encadeadas_em_C
+	url = https://github.com/ivismma/Listas-Encadeadas-em-C.git
+[submodule "IC_UFRJ_ProgC"]
+	path = IC_UFRJ_ProgC
+	url = https://github.com/ivismma/IC-UFRJ-ProgC.git
