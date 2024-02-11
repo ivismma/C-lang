@@ -1,0 +1,3 @@
+Aluno 1: Manuel Lima | DRE: 12351929 | Idade: 23 | Peso: 60.0 Kg | Altura: 1.67m
+Aluno 2: Leandro Silva | DRE: 123712356 | Idade: 20 | Peso: 70.0 Kg | Altura: 1.76m
+Aluno 3: Andre Bastos | DRE: 122761232 | Idade: 24 | Peso: 75.0 Kg | Altura: 1.68m
