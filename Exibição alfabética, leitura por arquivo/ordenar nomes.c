@@ -5,9 +5,9 @@
 #include <locale.h>
 
 #define N_PESSOAS 18 // Existem 20 nomes no arquivo.
-#define N_CHAR 30+1 // N∫ m·x. de caracteres no nome.
+#define N_CHAR 30+1 // N¬∫ m√°x. de caracteres no nome.
 
-// ExibiÁ„o de lista de nomes em ordem alfabÈtica, leitura em arquivo textual.
+// Exibi√ß√£o de lista de nomes em ordem alfab√©tica, leitura em arquivo textual.
 
 typedef struct {
     char nome[N_CHAR];
@@ -24,12 +24,12 @@ int main(void){
 	
 	Pessoa *pessoa = (Pessoa *) malloc(tam * sizeof(Pessoa));
 	if(pessoa == NULL){
-		printf("Falha na alocaÁ„o de memÛria.");
+		printf("Falha na aloca√ß√£o de mem√≥ria.");
 		return -1;
 	}
 	
     if(!inserirNomes(pessoa, &tam)){
-		printf("Falha na abertura ou localizaÁ„o do arquivo \"pessoas.txt\".");
+		printf("Falha na abertura ou localiza√ß√£o do arquivo \"pessoas.txt\".");
 		return -2;
 	}
 	exibirNomesOrdenados(pessoa, tam);
@@ -44,8 +44,8 @@ void exibirPessoa(Pessoa pessoa){
 }
 
 
-// O objetivo dessa funÁ„o È somente imprimir ordenadamente, ent„o È criado
-// uma struct auxiliar para ser ordenada sem mexer no vetor din‚mico original.
+// O objetivo dessa fun√ß√£o √© somente imprimir ordenadamente, ent√£o √© criado
+// uma struct auxiliar para ser ordenada sem mexer no vetor din√¢mico original.
 
 void exibirNomesOrdenados(Pessoa *original, int tam){
     bool ordenado;
@@ -54,10 +54,10 @@ void exibirNomesOrdenados(Pessoa *original, int tam){
 	Pessoa pessoa[tam]; // Auxiliar
 	for(int i = 0; i < tam; ++i) pessoa[i] = original[i];
 	
-	// OrdenaÁ„o:        (Bubble sort c/ FLAG.)
+	// Ordena√ß√£o:        (Bubble sort c/ FLAG.)
     do{ 
         ordenado = true;
-        for(int i = 0; i < fim; ++i) {  //strcmp n„o case-sensitive...
+        for(int i = 0; i < fim; ++i) {  //strcmp n√£o case-sensitive...
             if(strcasecmp(pessoa[i].nome, pessoa[i+1].nome) > 0){ 
                 Pessoa aux = pessoa[i];
                 pessoa[i] = pessoa[i+1];
@@ -68,9 +68,9 @@ void exibirNomesOrdenados(Pessoa *original, int tam){
         --fim; 
     } while(!ordenado);
     
-	// ExibiÁ„o da lista:
-	printf("Lista de nomes em ordem alfabÈtica:\n");
-    printf("CÛdigo    Pessoa\n---------------------\n");
+	// Exibi√ß√£o da lista:
+	printf("Lista de nomes em ordem alfab√©tica:\n");
+    printf("C√≥digo    Pessoa\n---------------------\n");
     for(int i = 0; i < tam; ++i)
         exibirPessoa(pessoa[i]);
         
@@ -90,17 +90,17 @@ bool inserirNomes(Pessoa *pessoa, int *tam){
 	fgetc(arq); // Entra na lista.
 	while(i < *tam && (c = fgetc(arq)) != '}'){
 		char nome[N_CHAR];
-		nome[0] = c; // J· lido no while.
-		fscanf(arq, "%[^\n]", &nome[1]); // Escrita a partir de nome[1].
+		nome[0] = c; // J√° lido no while.
+		fscanf(arq, "%[^\n]", &nome[1]); // Escrita a partir de nome[1]. Mesmo que endere√ßo nome+1
 		strcpy(pessoa[i].nome, nome);
 		pessoa[i++].codigo = 1000+i;
 		fgetc(arq); // Pula p/ linha seguinte.
 	}
-	if(i < *tam){ // EOF antes de achar tam nomes, significa que N_PESSOAS È maior que a qtd de nomes no arquivo.
+	if(i < *tam){ // EOF antes de achar tam nomes, significa que N_PESSOAS √© maior que a qtd de nomes no arquivo.
 		*tam = i;
 		printf("Aviso - N_PESSOAS maior que quantidade de nomes no arquivo.\n\n");
 	} 
 	
 	fclose(arq);
-	return true; // N„o ocorreu nenhum problema.
+	return true; // N√£o ocorreu nenhum problema.
 }
