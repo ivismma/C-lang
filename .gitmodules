@@ -2,11 +2,5 @@
 	path = Listas encadeadas
 	url = https://github.com/ivismma/Listas-Encadeadas-em-C.git
 [submodule "UFRJ - Prog I + Prog II"]
-	path = UFRJ-ProgC
+	path = UFRJ - Prog I + Prog II
 	url = https://github.com/ivismma/IC-UFRJ-ProgC.git
-[submodule "Snake Game em C"]
-	path = Snake Game em C
-	url = https://github.com/ivismma/Jogo-da-Minhoca-em-C.git
-[submodule "C com Python"]
-	path = C com Python
-	url = https://github.com/ivismma/Aplicacao-C-com-Python.git
