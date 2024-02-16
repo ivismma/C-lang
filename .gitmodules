@@ -2,5 +2,5 @@
 	path = Listas encadeadas
 	url = https://github.com/ivismma/Listas-Encadeadas-em-C.git
 [submodule "UFRJ - Prog I + Prog II"]
-	path = UFRJ - Prog I + Prog II
+	path = UFRJ - ProgC
 	url = https://github.com/ivismma/IC-UFRJ-ProgC.git
