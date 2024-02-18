@@ -3,7 +3,7 @@
 
 #define Pilha Lista 
 #define Fila Lista
-					// Impl. usando mesma estrutura (Fila s/ ponteiro para fim).
+					// Impl. genérica usando mesma estrutura (Fila s/ ponteiro para início e fim).
 
 typedef struct node{
 	int valor;
