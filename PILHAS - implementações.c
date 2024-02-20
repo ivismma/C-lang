@@ -2,9 +2,9 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-// Implementações de pilha em C.   FIFO.
+// ImplementaÃ§Ãµes de pilha em C.   FIFO.
 
-// Estruturas definidas(Nó e Pilha):
+// Estruturas definidas(NÃ³ e Pilha):
 typedef struct node{
 	int dado;
 	struct node *prox;
@@ -14,17 +14,17 @@ typedef struct{
 	Node *topo;
 } Pilha;
 
-// Funções de gerenciamento:
-Node *alocarNode(int valor); // Alocar memória p/ nó
+// FunÃ§Ãµes de gerenciamento:
+Node *alocarNode(int valor); // Alocar memÃ³ria p/ nÃ³
 Pilha *inicializarPilha(Pilha *pilha); // Alocar e inicializar estrutura Pilha.
 Pilha *esvaziarPilha(Pilha *pilha);    // Desalocar/liberar todos elementos da pilha.
-bool desalocarPilha(Pilha **pilha);   // Desalocar a struct Pilha, se a pilha não estiver vazia, limpa antes.
-Pilha *empilhar(Pilha *pilha, int valor);  // pop(), Insere nó no topo.
+bool desalocarPilha(Pilha **pilha);   // Desalocar a struct Pilha, se a pilha nÃ£o estiver vazia, limpa antes.
+Pilha *empilhar(Pilha *pilha, int valor);  // pop(), Insere nÃ³ no topo.
 int desempilhar(Pilha **pilha); // push(), Retorna o valor desempilhado e atualiza o topo da pilha com *ptr duplo.
 int dadoTopo(Pilha *pilha); // Retornar dado atual do topo da pilha (sem desempilhar).
-int tamanhoPilha(Pilha *pilha); // Quantidade de nós (elementos) da pilha.
-void exibirPilha(Pilha *pilha); // Verifica se pilha foi inicializada ou está vazia. Exibe a pilha verticalmente. 
-// Funções c/ parâmetros que usam ponteiro duplo: Função precisa atualizar o ponteiro na main().
+int tamanhoPilha(Pilha *pilha); // Quantidade de nÃ³s (elementos) da pilha.
+void exibirPilha(Pilha *pilha); // Verifica se pilha foi inicializada ou estÃ¡ vazia. Exibe a pilha verticalmente. 
+// FunÃ§Ãµes c/ parÃ¢metros que usam ponteiro duplo: FunÃ§Ã£o precisa atualizar o ponteiro na main().
 
 int main(void){
 	Pilha *pilha1 = NULL, *pilha2 = NULL;
@@ -70,7 +70,7 @@ Pilha *inicializarPilha(Pilha *pilha){
 	return pilha;
 }
 
-Pilha *esvaziarPilha(Pilha *pilha){ // Esvazia nós da pilha deixando-a vazia. Continuará inicializada.
+Pilha *esvaziarPilha(Pilha *pilha){ // Esvazia nÃ³s da pilha deixando-a vazia. ContinuarÃ¡ inicializada.
 	if(pilha == NULL){
 		printf("Pilha nao inicializada\n");
 		return NULL;
@@ -83,16 +83,16 @@ Pilha *esvaziarPilha(Pilha *pilha){ // Esvazia nós da pilha deixando-a vazia. Co
 	while(atual != NULL){
 		Node *aux = atual;
 		atual = atual->prox;
-		free(aux); // Desalocar nó.
+		free(aux); // Desalocar nÃ³.
 	}
 	pilha->topo = NULL;
 	return pilha;
 }
 
-bool desalocarPilha(Pilha **pilha){ // Desaloca a pilha. p/ readicionar elementos, inicializá-la novamente.
+bool desalocarPilha(Pilha **pilha){ // Desaloca a pilha. p/ readicionar elementos, inicializÃ¡-la novamente.
 	if(*pilha == NULL) return false;
 	if( (*pilha)->topo != NULL){
-		// Se pilha não está vazia, liberar nós (evitar vazamento de memória)
+		// Se pilha nÃ£o estÃ¡ vazia, liberar nÃ³s (evitar vazamento de memÃ³ria)
 		*pilha = esvaziarPilha(*pilha);
 	}
 	free((*pilha));
@@ -116,13 +116,12 @@ Pilha *empilhar(Pilha *pilha, int valor){
 }
 
 int desempilhar(Pilha **pilha){
-	Node *aux = (*pilha)->topo;
-	if(*pilha == NULL || aux == NULL){
+	if(*pilha == NULL || (*pilha)->topo == NULL){
 		printf("Tentativa de retorno em pilha vazia/nao inicializada");
 		exit(3);
 	}
-	int dado = aux->dado;
-	aux = (*pilha)->topo->prox;
+	int dado = (*pilha)->topo->dado;
+	Node *aux = (*pilha)->topo->prox;
 	free((*pilha)->topo);
 	(*pilha)->topo = aux;
 	
