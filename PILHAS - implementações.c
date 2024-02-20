@@ -2,7 +2,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-// Implementações de pilha em C.   FIFO.
+// Implementações de pilha em C.   LIFO.
 
 // Estruturas definidas(Nó e Pilha):
 typedef struct node{
