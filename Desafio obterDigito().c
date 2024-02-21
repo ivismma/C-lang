@@ -18,7 +18,6 @@ int main(void){
 }
 
 int obterDigito(int n, char letra){
-	int i;
 	n = (n < 0)? -n : n;    // Evitar retorno negativo.
 	
 	if(letra == 'u') 
@@ -26,12 +25,11 @@ int obterDigito(int n, char letra){
 	else if(letra == 'd') 
 		return n/10%10;     // Necessário pular um dígito
 	else if(letra == 'c') 
-		i = n/100%10;       // Necessário pular dois dígitos
+		return n/100%10;       // Necessário pular dois dígitos
 	else if(letra == 'm') 
-		i = n/1000%10;      // Necessário pular três dígitos
+		return n/1000%10;      // Necessário pular três dígitos
 	else 
-		return -1;          // Letra inválida.
-	
+		return -1;          // Letra inválida
 }
 
 /*
