@@ -19,8 +19,8 @@ Node *alocarNode(int valor); // Alocar memória p/ nó
 Pilha *inicializarPilha(Pilha *pilha); // Alocar e inicializar estrutura Pilha.
 Pilha *esvaziarPilha(Pilha *pilha);    // Desalocar/liberar todos elementos da pilha.
 bool desalocarPilha(Pilha **pilha);   // Desalocar a struct Pilha, se a pilha não estiver vazia, limpa antes.
-Pilha *empilhar(Pilha *pilha, int valor);  // pop(), Insere nó no topo.
-int desempilhar(Pilha **pilha); // push(), Retorna o valor desempilhado e atualiza o topo da pilha com *ptr duplo.
+Pilha *empilhar(Pilha *pilha, int valor);  // push(), Insere nó no topo.
+int desempilhar(Pilha **pilha); // pop(), Retorna o valor desempilhado e atualiza o topo da pilha com *ptr duplo.
 int dadoTopo(Pilha *pilha); // Retornar dado atual do topo da pilha (sem desempilhar).
 int tamanhoPilha(Pilha *pilha); // Quantidade de nós (elementos) da pilha.
 void exibirPilha(Pilha *pilha); // Verifica se pilha foi inicializada ou está vazia. Exibe a pilha verticalmente. 
