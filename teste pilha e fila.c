@@ -10,8 +10,8 @@ typedef struct node{
 	struct node *prox;
 } Lista;
 
-Pilha *empilhar(Pilha *topo, int valor);  // pop()
-Pilha *desempilhar(Pilha *topo);          // push()
+Pilha *empilhar(Pilha *topo, int valor);  // push()
+Pilha *desempilhar(Pilha *topo);          // pop()
 
 Fila *enfileirar(Fila *topo, int valor);
 Fila *liberar(Fila *topo);
