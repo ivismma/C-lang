@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-// Exibe todos os n�meros primos at� o valor n.
+// Exibe todos os números primos até o valor n.
 void numerosPrimos(int n);
 
 int main(void){
@@ -20,18 +20,21 @@ int main(void){
 }
 
 void numerosPrimos(int n){            // ITERATIVO
-	int numAtual = 2; // 1� n�mero primo.
+	// Considerando chamada da função n sempre >= 2:
+	printf("2 "); // imprimir único par e evitar checagens dos pares
+	
+	int numAtual = 3; // 1º número primo não par.
 	
 	while(numAtual <= n){
-		bool primo = true; // inicia cada n� presumindo que seja primo.
+		bool primo = true; // inicia cada nº presumindo que seja primo.
 		for(int i = numAtual/2; i > 1; --i){
-			if(numAtual%i == 0){ // Encontrou um divis�vel.
+			if(numAtual%i == 0){ // Encontrou um divisível.
 				primo = false;
 				break;
 			}
 		}
 		if(primo) printf("%d ", numAtual);
-		++numAtual;
+		numAtual += 2; // Pular de ímpar em ímpar. Sabemos que 2 é o único nº par primo.
 	}
 	
 	return;
