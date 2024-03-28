@@ -37,15 +37,15 @@ void recursao(int n, int numAtual, int i, bool primo){
 	if(numAtual > n) return; // caso base: atingir limite n.
 	if(i > 1)
 		if(numAtual%i == 0)
-			npRecursivo(n, numAtual, 1, false); // Define i = 1, como se fosse um break.
+			recursao(n, numAtual, 1, false); // Define i = 1, como se fosse um break.
 		else
-			npRecursivo(n, numAtual, i-1, true); // Continua checando.. por enquanto é primo.
+			recursao(n, numAtual, i-1, true); // Continua checando.. por enquanto é primo.
 	else{ // i == 1
 		if(primo){
 			printf("%d ", numAtual); // Imprime o nª primo.
-			npRecursivo(n, numAtual+1, (numAtual+2)/2, true);
+			recursao(n, numAtual+1, (numAtual+2)/2, true);
 		}
 		else     // Não é primo.
-			npRecursivo(n, numAtual+1, (numAtual+2)/2, true);
+			recursao(n, numAtual+1, (numAtual+2)/2, true);
 	}
 }
