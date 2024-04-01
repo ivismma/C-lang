@@ -43,9 +43,9 @@ void recursao(int n, int numAtual, int i, bool primo){
 	else{ // i == 1
 		if(primo){
 			printf("%d ", numAtual); // Imprime o nª primo.
-			recursao(n, numAtual+1, (numAtual+2)/2, true);
+			recursao(n, numAtual+2, (numAtual+2)/2, true);
 		}
 		else     // Não é primo.
-			recursao(n, numAtual+1, (numAtual+2)/2, true);
+			recursao(n, numAtual+2, (numAtual+2)/2, true);
 	}
 }
