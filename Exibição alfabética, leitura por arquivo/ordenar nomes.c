@@ -25,12 +25,12 @@ int main(void){
 	Pessoa *pessoa = (Pessoa *) malloc(tam * sizeof(Pessoa));
 	if(pessoa == NULL){
 		printf("Falha na alocação de memória.");
-		return -1;
+		return 1;
 	}
 	
     if(!inserirNomes(pessoa, &tam)){
 		printf("Falha na abertura ou localização do arquivo \"pessoas.txt\".");
-		return -2;
+		return 2;
 	}
 	exibirNomesOrdenados(pessoa, tam);
 
