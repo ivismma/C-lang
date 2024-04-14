@@ -2,46 +2,46 @@
 #include <stdlib.h>
 #include <locale.h>
 
-// Escrever 7 números e gravar em um arquivo binário, em seguida
-// inserir um nº número p/ ver sua posição no arquivo binário
-// Esse código irá percorrer o arquivo e procurar onde está posicionado o nº buscado.
-// Se houver mais de um mesmo nº, a posição será o do primeiro encontrado.
+// Escrever 7 nÃºmeros e gravar em um arquivo binÃ¡rio, em seguida
+// inserir um nÂº nÃºmero p/ ver sua posiÃ§Ã£o no arquivo binÃ¡rio
+// Esse cÃ³digo irÃ¡ percorrer o arquivo e procurar onde estÃ¡ posicionado o nÂº buscado.
+// Se houver mais de um mesmo nÂº, a posiÃ§Ã£o serÃ¡ o do primeiro encontrado.
 
 int main(void){
 	const int tam = 7;
 	setlocale(LC_ALL, "Portuguese");
-	int *v = malloc(tam * sizeof(int)); // Aloc. dinâmica.
-	if(v == NULL) return -1;
+	int *v = malloc(tam * sizeof(int)); // Aloc. dinÃ¢mica.
+	if(v == NULL) return 1;
 	
-	printf("Digite 7 números, separados por espaço: ");
+	printf("Digite 7 nÃºmeros, separados por espaÃ§o: ");
 	for(int i = 0; i < tam; ++i) scanf("%d", v + i);
 	
-	// Escrita no arq. binário:
+	// Escrita no arq. binÃ¡rio:
 	
 	FILE *arq;
-	if( !(arq = fopen("dados.dat", "wb")) ) return -2;
+	if( !(arq = fopen("dados.dat", "wb")) ) return 2;
 	else fwrite(v, sizeof(int), tam, arq);
 	free(v);
 	fclose(arq);
 	
-	// Busca e leitura no arq. binário:
+	// Busca e leitura no arq. binÃ¡rio:
 	
 	int i = 1, busca, atual;
 	printf("\n----- Consultar pos. do dado no arquivo -----\n");
-	printf("Digite um dos números que você digitou: ");
+	printf("Digite um dos nÃºmeros que vocÃª digitou: ");
 	scanf("%d", &busca);
 	
 	arq = fopen("dados.dat", "rb");
-	while(fread(&atual, sizeof(int), 1, arq)){ // Enquanto leitura é válida..
+	while(fread(&atual, sizeof(int), 1, arq)){ // Enquanto leitura Ã© vÃ¡lida..
 		if(busca == atual) break;
 		++i;
 	}
 	fclose(arq);
 	if(busca == atual){
-		printf("\nO número buscado (%d) é o %dº valor do arquivo binário.", busca , i);
-		printf("\nSe houver números repetidos, a posição encontrada é a do primeiro no arquivo binário.");
+		printf("\nO nÃºmero buscado (%d) Ã© o %dÂº valor do arquivo binÃ¡rio.", busca , i);
+		printf("\nSe houver nÃºmeros repetidos, a posiÃ§Ã£o encontrada Ã© a do primeiro no arquivo binÃ¡rio.");
 	} 
-	else printf("\nValor buscado (%d) não encontrado no arquivo binário.", busca);
+	else printf("\nValor buscado (%d) nÃ£o encontrado no arquivo binÃ¡rio.", busca);
 	
 	return 0;	
 }
