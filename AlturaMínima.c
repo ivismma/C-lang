@@ -40,7 +40,7 @@ int main(){
     // DEFESA
 	if( (qtd < 1 || qtd > 6) || (altura < 90 || altura > 200) ){ 
 		printf("ERRO - Os valores inseridos não respeitam o intervalo da questão 1.");
-		return -1;
+		return 1;
 	}
 	// Solução
 	int brinquedo[qtd]; // Criação de vetor de tamanho quantidade de brinquedos.
