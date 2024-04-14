@@ -10,7 +10,7 @@ int main(void){
 	
 	if ( !(arq =  fopen("arqbin.dat", "wb")) ){
 		printf("abertura falhou colega");
-		return -1;
+		return 1;
 	}
 	// Escrita do número e vetor no arq binário.
 	fwrite(&n, sizeof(int), 1, arq);
