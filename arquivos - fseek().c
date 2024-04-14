@@ -8,7 +8,7 @@ int main(void){
 	FILE *arq  = fopen("antes.txt", "w"),  // Antes
 	     *arq2 = fopen("depois.txt", "w"); // Depois das alterações.
 	if(!arq || !arq2){
-		printf("windows nao quis rsrs"); return -1;
+		printf("windows nao quis rsrs"); return 1;
 	}
 		
 	fprintf(arq, "123456789\n");
