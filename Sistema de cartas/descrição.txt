@@ -1,0 +1,14 @@
+Sistema de cartas, com funções de gerenciamento podendo ser útil para jogos como Pôquer, Sueca e outros jogos que utilizam 
+um baralho de 52 cartas (ou mais, necessitando ajustar o programa para tal).
+
+- O baralho é usado como uma estrutura de dados do tipo Pilha, onde o topo do baralho é a carta no topo.
+
+- Utiliza uma lógica com um vetor auxiliar que é usado para jogar uma carta para fora e dentro da pilha, com
+o objetivo de embaralhar as cartas.
+
+- Os macros MIN_TROCAS e MAX_TROCAS são para definir a quantidade de trocas a serem feitas no baralho.
+Será gerado um número aleatório entre MIN_TROCAS e MAX_TROCAS e será a quantidade de vezes que serão feitos swaps no 
+baralho AUXILIAR aleatoriamente.
+Após isso o baralho auxiliar envia de volta as cartas para a pilha, exatamente na ordem em que está.
+
+- Também está disponível uma struct Mesa idealmente para jogo de pôquer.
