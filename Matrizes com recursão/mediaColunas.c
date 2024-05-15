@@ -3,18 +3,18 @@
 
 #define TAM 3
 
-// Retorna um ponteiro para um vetor din‚mico com a mÈdia das TAM colunas, indexadas referente a matriz.
-float* mediaColunas(float M[TAM][TAM], int i, int j, float soma, float *p);
-
+// Retorna um ponteiro para um vetor din√¢mico com a m√©dia das TAM colunas, indexadas referente a matriz.
+float *mediaColunas(float M[TAM][TAM]); // somente 1 argumento
+float *mediaColunasRec(float M[TAM][TAM], int i, int j, float soma, float *p);
 
 void exibeMatriz(float M[TAM][TAM], int i, int j);
 
 int main(void){
 	float M[TAM][TAM] = { {4,7,1},{6,8,0},{0,9,2} };
 	
-	float *p = mediaColunas(M, 0, 0, 0, NULL);
+	float *p = mediaColunas(M);
 	
-	exibeMatriz(M, 0, 0);
+	exibeMatriz(M,0,0);
 	printf("\nMedia das colunas: ");
 	for(int i = 0; i < TAM; ++i) printf("%.2f  ", p[i]);
 	
@@ -22,35 +22,29 @@ int main(void){
 	return 0;
 }
 
-float* mediaColunas(float M[TAM][TAM], int i, int j, float soma, float *p){
-	// Primeira iteraÁ„o, alocaÁ„o do vetor.
-	if(p == NULL){
-		p = malloc(TAM*sizeof(float));
-		if(p == NULL){
-			printf("Falha na alocacao\n");
-			exit(123);
-		}
-	}
+// aloca√ß√£o e in√≠cio da recurs√£o (com os argumentos)
+float *mediaColunas(float M[TAM][TAM]){
+	// Primeira itera√ß√£o, aloca√ß√£o do vetor.
+	float *p = malloc(TAM*sizeof(float));
+	if(p == NULL) exit(123);
 	
+	return mediaColunasRec(M, 0, 0, 0, p);
+}
+
+// recurs√£o
+float* mediaColunasRec(float M[TAM][TAM], int i, int j, float soma, float *p){
 	if(j == TAM) return p; // Caso base
 	
 	// Caso geral:
 	if(i < TAM){
 		soma += M[i][j];
-		mediaColunas(M, i+1, j, soma, p);
+		mediaColunasRec(M, i+1, j, soma, p);
 	}
 	else{
 		p[j] = soma/TAM;
-		mediaColunas(M, 0, j+1, 0, p);
+		mediaColunasRec(M, 0, j+1, 0, p);
 	}
 }
-
-
-
-
-
-
-
 
 
 
