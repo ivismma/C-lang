@@ -2,8 +2,8 @@
 	path = Listas encadeadas
 	url = https://github.com/ivismma/Listas-Encadeadas-em-C.git
 [submodule "UFRJ - Prog I + Prog II"]
-	path = UFRJ-ProgC
-	url = https://github.com/ivismma/IC-UFRJ-ProgC.git
+	path = IC Prog I e Prog II
+	url = https://github.com/ivismma/IC-Prog-I-Prog-II.git
 [submodule "Snake Game em C"]
 	path = Snake Game em C
 	url = https://github.com/ivismma/Jogo-da-Minhoca-em-C.git
