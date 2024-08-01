@@ -13,3 +13,6 @@
 [submodule "Listas Encadeadas"]
 	path = Listas Encadeadas
 	url = https://github.com/ivismma/Listas-Encadeadas-em-C/
+[submodule "Programação Concorrente"]
+	path = Programação Concorrente
+	url = https://github.com/ivismma/Programacao-Concorrente-pthreads-C.git
