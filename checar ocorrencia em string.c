@@ -3,18 +3,19 @@
 #include <ctype.h>
 #include <string.h>
 
-// Receber uma string e uma sequência de caracteres, em seguida 
-// verificar se está contido na string.
+// Receber uma string e uma sequÃªncia de caracteres, em seguida 
+// verificar se estÃ¡ contido na string.
 
 bool palavraAparece(char *str1, char *str2);
 
 int main(void){
 	char str1[50];
-	char str2[25];
+	char str2[30]; // substring a procurar
 	
-	printf("Digite uma frase: "); // até 49 caracteres
+	printf("Digite uma frase: "); // atÃ© 49 caracteres
 	fgets(str1,50,stdin);
-	printf("Digite uma palavra ou sequencia de caracteres: "); // até 24.
+	str1[strlen(str1)-1] = '\0';
+	printf("Digite uma palavra ou sequencia de caracteres: "); // (atÃ© 29).
 	scanf("%s", str2);
 	
 	if(palavraAparece(str1, str2))
@@ -25,18 +26,22 @@ int main(void){
 	return 0;
 }
 
-// Ambos serão transformados em minusculo para melhorar verificação
+// Ambos serÃ£o transformados em minusculo para melhorar verificaÃ§Ã£o
 
 bool palavraAparece(char *str1, char *str2){
-	int tam = strlen(str2),            // tam é o tamanho da sequência procurada.
-	cont = 0, i = 0;
-	while(str1[i] != '\0'){
-		char c  = tolower(str1[i++]);  // Caracter atual.
-		char c2 = tolower(str2[cont]); // Caracter atual da sequência procurada.
-		if(c == c2){
-			if(cont++ == tam-1) return true; // Sequência encontrada.
-		}
-		else cont = 0;
+	int tam1 = strlen(str1);
+	int tam2 = strlen(str2);
+	// tam2 Ã© o tamanho da sequÃªncia procurada.
+	for(int i = 0, j = 0; i < tam1; ++i){
+		char c1 = tolower(str1[i]);
+		char c2 = tolower(str2[j]);
+		if(c1 == c2)
+			++j;
+		else
+			// se c1 != c2, testa str2[0] p/ o mesmo str1[i] antes de incrementar.
+			j = (c1 == str2[0])? 1 : 0;
+		
+		if(j == tam2) return true;
 	}
-	return false;  // Não encontrou.
+	return false;  // NÃ£o encontrou.
 }
