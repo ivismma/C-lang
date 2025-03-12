@@ -25,7 +25,7 @@ void achaSoma(int *v, short tam, short N){
 		int soma = v[i] + v[j];
 		if(soma == N){
 			cout << v[i] << " e " << v[j] << "\n-------\n";
-			int aux = i++; // só pra impedir amostragem de somas repetidas:
+			int aux = i++; // sÃ³ pra impedir amostragem de somas repetidas:
 			while(v[i] == v[aux]) ++i;
 		}
 		else if(soma < N) ++i;
