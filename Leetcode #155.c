@@ -1,12 +1,15 @@
+// Leetcode - Min Stack
+// https://leetcode.com/problems/min-stack
+
 #include <stdio.h>
 #include <stdlib.h>
 
 typedef int KEYTYPE;
 
-// nó da pilha
+// nÃ³ da pilha
 typedef struct _StackNode{
 	KEYTYPE key;
-	int min; // diz quem é o minimo da pilha até ESSE nó.
+	int min; // diz quem Ã© o minimo da pilha atÃ© ESSE nÃ³.
 	struct _StackNode *next;
 } StackNode;
 
