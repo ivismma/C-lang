@@ -1,8 +1,8 @@
-// implementação do bucket sort considerando apenas
-// números inteiros
+// implementaÃ§Ã£o do bucket sort considerando apenas
+// nÃºmeros inteiros
 
-// bucket sort é um algoritmo de ordenação O(n), ñ
-// ordena por comparação, mas por contagem.
+// bucket sort Ã© um algoritmo de ordenaÃ§Ã£o O(n), Ã±
+// ordena por comparaÃ§Ã£o, mas por contagem.
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -23,20 +23,20 @@ int main(void){
 
 
 void bucketSort(int *v, int size, int min, int max){
-	// incializa qtd de baldes necessária: diff entre (max e min) + 1
-	int buckets_amount = max-min+1;
-	int *buckets = (int *) calloc(buckets_amount, sizeof(int));
+	// inicializa qtd de baldes necessÃ¡rios (r): diff entre (max e min) + 1
+	int r = max-min+1;
+	int *buckets = (int *) calloc(r, sizeof(int)); // -> O(r)
 	
-	// conta todos dígitos e soma nos baldes -> O(n)
+	// conta todos dÃ­gitos e soma nos baldes -> O(n)
 	for(int i = 0; i < size; ++i)
 		++buckets[v[i]-min]; 
-		// descontando min: ex.: [2,6] -> valor 2 precisa ser mapeado para índ. 0 do vetor.
-		// que é 2 - min = 0.
+		// descontando min: ex.: [2,6] -> valor 2 precisa ser mapeado para Ã­nd. 0 do vetor.
+		// que Ã© 2 - min = 0.
 
 	// modifica vetor adicionando buckets[i] vezes cada elemento -> O(n)
-	// é O(n) pois a soma dos elementos dos baldes será o tam. do vetor.
+	// Ã© O(n) pois a soma dos elementos dos baldes serÃ¡ o tam. do vetor.
 	int k = 0;
-	for(int i = 0; i < buckets_amount; ++i)
+	for(int i = 0; i < r; ++i)
 		for(int j = 0; j < buckets[i]; ++j)
 			v[k++] = i+min;
 	free(buckets);
